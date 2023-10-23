@@ -15,14 +15,21 @@ https://learn.microsoft.com/pt-br/sql/ssms/download-sql-server-management-studio
 # Configuração
 
 Também é preciso fazer a instalação e configuração do driver para comunicação entre o Pentaho e o Sql Server, o driver pode ser encontrado no seguinte link:
+
 https://www.microsoft.com/pt-BR/download/details.aspx?id=11774
 
 O driver deve ser descompactado e movido para a pasta data-integration > lib.
+
 Último passo para estabelecer a comunicação entre as duas ferramentas, é a configuração do jndi, que deve ser feito no arquivo data-integration -> simple-jndi -> jdbc.properties, conforme o seguinte exemplo.
 
 nome_conexão/type=javax.sql.DataSource
+
 nome_conexão/driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+
 nome_conexão/url=jdbc:sqlserver://ip:porta;databaseName=databaseName
+
 nome_conexão/user=usuário
+
 nome_conexão/password=senha
+
 nome_conexão/maxWait=3600
